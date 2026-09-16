@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crime Records</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: #6f42c1;
+        }
+
+        form {
+            background-color: #ffe5e5;
+            padding: 20px;
+            border: 1px solid #b799ef;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #6f42c1;
+        }
+
+        input[type="text"],
+        textarea,
+        select,
+        input[type="file"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #6f42c1;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #6f42c1;
+            color: white;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #6f42c1;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+        }
+
+        th, td {
+            border: 1px solid #ffcccc;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #ffcccc;
+            color: #6f42c1;
+        }
+
+        tr:nth-child(even) {
+            background-color: #fff5f5;
+        }
+
+        a {
+            color: #6f42c1;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .upload-form {
+            background-color: #fff0f0;
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .delete-form {
+            display: inline;
+        }
+
+        .delete-btn {
+            background-color: transparent;
+            color: #6f42c1;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .delete-btn:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Add Crime Record</h1>
+    <form method="POST" enctype="multipart/form-data" action="{{ url_for('crime_records') }}">
+        <label>Crime Type:</label>
+        <input type="text" name="crime_type" required>
+
+        <label>Description:</label>
+        <textarea name="description" rows="3" required></textarea>
+
+        <label>Status:</label>
+        <select name="status" required>
+            <option value="Open">Open</option>
+            <option value="Under Investigation">Under Investigation</option>
+            <option value="Closed">Closed</option>
+        </select>
+
+        <label>Officer:</label>
+        <select name="officer_id" required>
+            <option value="" disabled selected>Select Officer</option>
+            {% for officer in officers %}
+                <option value="{{ officer.id }}">{{ officer.name }} ({{ officer.designation }})</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Add Crime</button>
+    </form>
+
+    <h2>Crime Records</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Crime Type</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Officer</th>
+                <th>Uploaded Files</th>
+                <th>Upload More Files</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for crime in crimes %}
+            <tr>
+                <td>{{ crime.crime_type }}</td>
+                <td>{{ crime.description }}</td>
+                <td>{{ crime.status }}</td>
+                <td>{{ crime.officer.name }}</td>
+                <td>
+                    {% if files_by_crime[crime.id] %}
+                        <ul>
+                            {% for file in files_by_crime[crime.id] %}
+                                <li>
+                                    <a href="{{ url_for('download_file', file_id=file.id) }}" target="_blank">{{ file.filename }}</a>
+                                    <form method="POST" action="{{ url_for('delete_file', file_id=file.id) }}" class="delete-form">
+                                        <button type="submit" class="delete-btn" title="Delete File">🗑</button>
+                                    </form>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        No files
+                    {% endif %}
+                </td>
+                <td>
+                    <form class="upload-form" method="POST" action="{{ url_for('upload_file', crime_id=crime.id) }}" enctype="multipart/form-data">
+                        <input type="file" name="file" accept="application/pdf" required>
+                        <button type="submit">Upload</button>
+                    </form>
+                </td>
+                <td>
+                    <form method="POST" action="{{ url_for('delete_crime', crime_id=crime.id) }}" class="delete-form">
+                        <button type="submit" class="delete-btn" title="Delete Crime">🗑 Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>

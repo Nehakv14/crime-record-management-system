@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+        }
+
+        h1 {
+            background-color: #3e0e96;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #561fbc;
+            margin-top: 30px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #f9f9f9;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #6f42c1;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #6f42c1;
+        }
+
+        .link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #6f42c1;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Your Dashboard</h1>
+    
+    <!-- Police Officers -->
+    <h2>Police Officers</h2>
+    <ul>
+        {% for officer in officers %}
+            <li>{{ officer.name }} - {{ officer.designation }}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- File Complaint Form -->
+    <h2>File a Complaint</h2>
+    <form method="POST" action="{{ url_for('file_complaint') }}">
+        <label for="title">Title:</label><br>
+        <input type="text" name="title" id="title" placeholder="Complaint title" required><br>
+
+        <label for="description">Description:</label><br>
+        <textarea name="description" id="description" placeholder="Describe the issue" required></textarea><br>
+        <label for="location">Location:</label><br>
+        <input type="text" name="location" placeholder="Enter location (e.g., Bengaluru)" required>
+
+
+        <button type="submit">Submit Complaint</button>
+    </form>
+
+
+
+    <a class="link" href="{{ url_for('complaints') }}">View All Complaints</a>
+</body>
+</html>

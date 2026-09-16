@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Map View</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+    <style>
+        body { display: flex; margin: 0; font-family: Arial; }
+        #map { height: 100vh; width: 70%; }
+        .sidebar {
+            width: 30%;
+            padding: 20px;
+            overflow-y: auto;
+            background: #f0f0f0;
+            border-left: 1px solid #ccc;
+        }
+        .complaint {
+            margin-bottom: 10px;
+            padding: 10px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+        button {
+            background: #6f42c1;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #4d13b8;
+        }
+    </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<div class="sidebar">
+    <h2>Complaint Locations</h2>
+    <div id="complaint-list">
+        {% for complaint in complaints %}
+            {% if complaint.location %}
+                <div class="complaint" data-index="{{ loop.index0 }}" data-title="{{ complaint.title }}" data-location="{{ complaint.location }}">
+                    <strong>{{ complaint.title }}</strong><br>
+                    <em>{{ complaint.location }}</em><br>
+                    <button>Locate</button>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+<script>
+    const map = L.map('map').setView([15.3173, 75.7139], 6); // Karnataka default center
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    const markers = [];
+
+    const complaintElements = document.querySelectorAll('.complaint');
+    complaintElements.forEach((element, index) => {
+        const title = element.getAttribute('data-title');
+        const location = element.getAttribute('data-location');
+
+        fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(location)}`)
+            .then(res => res.json())
+            .then(data => {
+                if (data.length > 0) {
+                    const lat = parseFloat(data[0].lat);
+                    const lon = parseFloat(data[0].lon);
+
+                    const marker = L.marker([lat, lon])
+                        .addTo(map)
+                        .bindPopup(`<b>${title}</b><br>${location}`);
+
+                    markers[index] = marker;
+
+                    const button = element.querySelector('button');
+                    button.addEventListener('click', () => {
+                        map.setView([lat, lon], 13);
+                        marker.openPopup();
+                    });
+                }
+            });
+    });
+</script>
+
+</body>
+</html>

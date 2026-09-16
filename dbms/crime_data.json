@@ -1,0 +1,258 @@
+{
+    "Andhra Pradesh": {
+        "Total Crimes": 222199,
+        "Crime Rate": 420.4,
+        "Crime Density": 136.34,
+        "Investigation Rate": 63.7,
+        "Charge-Sheeting Rate": 92.9,
+        "Conviction Rate": 84.7
+    },
+    "Arunachal Pradesh": {
+        "Total Crimes": 163697,
+        "Crime Rate": 244.4,
+        "Crime Density": 85.35,
+        "Investigation Rate": 70.3,
+        "Charge-Sheeting Rate": 78.9,
+        "Conviction Rate": 50.4
+    },
+    "Assam": {
+        "Total Crimes": 731738,
+        "Crime Rate": 1044.2,
+        "Crime Density": 372.87,
+        "Investigation Rate": 96.9,
+        "Charge-Sheeting Rate": 95.9,
+        "Conviction Rate": 21.1
+    },
+    "Bihar": {
+        "Total Crimes": 524960,
+        "Crime Rate": 1477.2,
+        "Crime Density": 1351.17,
+        "Investigation Rate": 84.9,
+        "Charge-Sheeting Rate": 91.8,
+        "Conviction Rate": 86.5
+    },
+    "Chhattisgarh": {
+        "Total Crimes": 238105,
+        "Crime Rate": 452.7,
+        "Crime Density": 299.56,
+        "Investigation Rate": 54.4,
+        "Charge-Sheeting Rate": 70.5,
+        "Conviction Rate": 29.1
+    },
+
+    "Delhi": {
+        "Total Crimes": 238105,
+        "Crime Rate": 452.7,
+        "Crime Density": 299.56,
+        "Investigation Rate": 54.4,
+        "Charge-Sheeting Rate": 70.5,
+        "Conviction Rate": 29.1
+    },
+
+    "Goa": {
+        "Total Crimes": 238105,
+        "Crime Rate": 452.7,
+        "Crime Density": 299.56,
+        "Investigation Rate": 54.4,
+        "Charge-Sheeting Rate": 70.5,
+        "Conviction Rate": 29.1
+    },
+
+    "Gujarat": {
+        "Total Crimes": 238105,
+        "Crime Rate": 452.7,
+        "Crime Density": 299.56,
+        "Investigation Rate": 54.4,
+        "Charge-Sheeting Rate": 70.5,
+        "Conviction Rate": 29.1
+    },
+
+    "Haryana": {
+        "Total Crimes": 238105,
+        "Crime Rate": 452.7,
+        "Crime Density": 299.56,
+        "Investigation Rate": 54.4,
+        "Charge-Sheeting Rate": 70.5,
+        "Conviction Rate": 29.1
+    },
+
+    "Himachal Pradesh": {
+        "Total Crimes": 238105,
+        "Crime Rate": 452.7,
+        "Crime Density": 299.56,
+        "Investigation Rate": 54.4,
+        "Charge-Sheeting Rate": 70.5,
+        "Conviction Rate": 29.1
+    },
+
+    "Jharkhand": {
+        "Total Crimes": 238105,
+        "Crime Rate": 452.7,
+        "Crime Density": 299.56,
+        "Investigation Rate": 54.4,
+        "Charge-Sheeting Rate": 70.5,
+        "Conviction Rate": 29.1
+    },
+
+    "Karnataka": {
+        "Total Crimes": 238105,
+        "Crime Rate": 452.7,
+        "Crime Density": 299.56,
+        "Investigation Rate": 54.4,
+        "Charge-Sheeting Rate": 70.5,
+        "Conviction Rate": 29.1
+    },
+
+    "Kerala": {
+        "Total Crimes": 238105,
+        "Crime Rate": 452.7,
+        "Crime Density": 299.56,
+        "Investigation Rate": 54.4,
+        "Charge-Sheeting Rate": 70.5,
+        "Conviction Rate": 29.1
+    },
+
+    "Madhya Pradesh": {
+        "Total Crimes": 238105,
+        "Crime Rate": 452.7,
+        "Crime Density": 299.56,
+        "Investigation Rate": 54.4,
+        "Charge-Sheeting Rate": 70.5,
+        "Conviction Rate": 29.1
+    },
+
+    "Maharashtra": {
+        "Total Crimes": 238105,
+        "Crime Rate": 452.7,
+        "Crime Density": 299.56,
+        "Investigation Rate": 54.4,
+        "Charge-Sheeting Rate": 70.5,
+        "Conviction Rate": 29.1
+    },
+
+    "Manipur": {
+        "Total Crimes": 238105,
+        "Crime Rate": 452.7,
+        "Crime Density": 299.56,
+        "Investigation Rate": 54.4,
+        "Charge-Sheeting Rate": 70.5,
+        "Conviction Rate": 29.1
+    },
+
+    "Meghalaya": {
+        "Total Crimes": 238105,
+        "Crime Rate": 452.7,
+        "Crime Density": 299.56,
+        "Investigation Rate": 54.4,
+        "Charge-Sheeting Rate": 70.5,
+        "Conviction Rate": 29.1
+    },
+
+    "Mizoram": {
+        "Total Crimes": 238105,
+        "Crime Rate": 452.7,
+        "Crime Density": 299.56,
+        "Investigation Rate": 54.4,
+        "Charge-Sheeting Rate": 70.5,
+        "Conviction Rate": 29.1
+    },
+
+    "Nagaland": {
+        "Total Crimes": 238105,
+        "Crime Rate": 452.7,
+        "Crime Density": 299.56,
+        "Investigation Rate": 54.4,
+        "Charge-Sheeting Rate": 70.5,
+        "Conviction Rate": 29.1
+    },
+
+    "Odisha": {
+        "Total Crimes": 238105,
+        "Crime Rate": 452.7,
+        "Crime Density": 299.56,
+        "Investigation Rate": 54.4,
+        "Charge-Sheeting Rate": 70.5,
+        "Conviction Rate": 29.1
+    },
+
+    "Punjab": {
+        "Total Crimes": 238105,
+        "Crime Rate": 452.7,
+        "Crime Density": 299.56,
+        "Investigation Rate": 54.4,
+        "Charge-Sheeting Rate": 70.5,
+        "Conviction Rate": 29.1
+    },
+
+    "Rajasthan": {
+        "Total Crimes": 238105,
+        "Crime Rate": 452.7,
+        "Crime Density": 299.56,
+        "Investigation Rate": 54.4,
+        "Charge-Sheeting Rate": 70.5,
+        "Conviction Rate": 29.1
+    },
+
+    "Sikkim": {
+        "Total Crimes": 238105,
+        "Crime Rate": 452.7,
+        "Crime Density": 299.56,
+        "Investigation Rate": 54.4,
+        "Charge-Sheeting Rate": 70.5,
+        "Conviction Rate": 29.1
+    },
+
+    "Tamil Nadu": {
+        "Total Crimes": 238105,
+        "Crime Rate": 452.7,
+        "Crime Density": 299.56,
+        "Investigation Rate": 54.4,
+        "Charge-Sheeting Rate": 70.5,
+        "Conviction Rate": 29.1
+    },
+
+    "Telangana": {
+        "Total Crimes": 238105,
+        "Crime Rate": 452.7,
+        "Crime Density": 299.56,
+        "Investigation Rate": 54.4,
+        "Charge-Sheeting Rate": 70.5,
+        "Conviction Rate": 29.1
+    },
+
+    "Tripura": {
+        "Total Crimes": 238105,
+        "Crime Rate": 452.7,
+        "Crime Density": 299.56,
+        "Investigation Rate": 54.4,
+        "Charge-Sheeting Rate": 70.5,
+        "Conviction Rate": 29.1
+    },
+
+    "Uttar Pradesh": {
+        "Total Crimes": 238105,
+        "Crime Rate": 452.7,
+        "Crime Density": 299.56,
+        "Investigation Rate": 54.4,
+        "Charge-Sheeting Rate": 70.5,
+        "Conviction Rate": 29.1
+    },
+
+    "Uttarakhand": {
+        "Total Crimes": 238105,
+        "Crime Rate": 452.7,
+        "Crime Density": 299.56,
+        "Investigation Rate": 54.4,
+        "Charge-Sheeting Rate": 70.5,
+        "Conviction Rate": 29.1
+    },
+
+    "West Bengal": {
+        "Total Crimes": 238105,
+        "Crime Rate": 452.7,
+        "Crime Density": 299.56,
+        "Investigation Rate": 54.4,
+        "Charge-Sheeting Rate": 70.5,
+        "Conviction Rate": 29.1
+    }
+}

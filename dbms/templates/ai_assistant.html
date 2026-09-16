@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Assistant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            background: #f2f2f2;
+        }
+        textarea, input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 1em;
+        }
+        .box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .btn {
+            padding: 10px 20px;
+            background: #6f42c1;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: #6f42c1;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>🔍 AI Assistant</h2>
+        <form method="post">
+            {% if not summary %}
+                <label>Step 1: Enter long crime text to summarize</label>
+                <textarea name="input_text" rows="6" required>{{ input_text }}</textarea>
+                <button type="submit" class="btn">Generate Summary</button>
+            {% else %}
+                <label>Original Crime Text:</label>
+                <textarea rows="6" readonly>{{ input_text }}</textarea>
+
+                <hr>
+                <h3>📄 Summary:</h3>
+                <p>{{ summary }}</p>
+
+                <label>Step 2: Ask a question based on the summary</label>
+                <input type="hidden" name="input_text" value="{{ input_text }}">
+                <input type="text" name="question" value="{{ question }}" required>
+                <button type="submit" class="btn">Ask Question</button>
+            {% endif %}
+        </form>
+
+        {% if answer %}
+            <h3>❓ Answer to Your Question:</h3>
+            <p>{{ answer }}</p>
+        {% endif %}
+
+        {% if request_count is not none %}
+    <p><strong>🧮 API Requests Used:</strong> {{ request_count }}</p>
+{% endif %}
+
+    </div>
+</body>
+</html>
